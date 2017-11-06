@@ -278,7 +278,7 @@ public class TrustedPersistentOAuth2Session: OAuth2Session {
         
         get {
             
-            if let timeIntervalAsString = self.keychain.read(userAccount: self.accountId, tokenType: .ExpirationDate),
+            if let timeIntervalAsString = self.keychain.read(userAccount: self.accountId, tokenType: .RefreshExpirationDate),
                let unwrappedTimeInterval = TimeInterval(timeIntervalAsString) {
                 
                 return Date(timeIntervalSince1970: unwrappedTimeInterval)
